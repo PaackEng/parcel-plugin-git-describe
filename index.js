@@ -1,8 +1,9 @@
 const util = require('util');
-const execSync = util.promisify(require('child_process').execSync);
+const exec = util.promisify(require('child_process').exec);
 
-module.exports = function () {
+module.exports = async function () {
   try {
-    process.env.GIT_DESCRIBE = execSync('git describe --always --tags --dirty=+').toString();
+    const { stdout } = await exec('git describe --always --tags --dirty=+');
+    process.env.GIT_DESCRIBE = stdout;
   } catch (e) { console.log(e); }
 }
