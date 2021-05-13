@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/PaackEng/parcel-plugin-git-describe/issues"
   },
-  "homepage": "https://github.com/PaackEng/parcel-plugin-git-describe#readme"
+  "homepage": "https://github.com/PaackEng/parcel-plugin-git-describe#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
